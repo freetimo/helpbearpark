@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<article>
+	<section>
+		{% verbatim %}
+		<div id="topApp" class="top_index">
+			<template v-for="item in items">
+				<a :href="[[ item.link ]]">
+					<div class="top_index_item">
+						<div class="top_index_img_container">
+							<img :src="[[item.image]]" class="top_index_img " :alt="[[item.title]]">
+						</div>
+						<div class="top_index_details">
+							<div class="top_index_title">[[item.title]]</div>
+							<div class="top_index_description">[[item.description]]</div>
+						</div>
+					</div>
+				</a>
+			</template>
+		</div>
+		{% endverbatim %}
+	</section>
+	<section class="middle_index">
+		<div class="content_section">
+			<div class="content_main_title eng_title">
+				<span>LATEST ARTICLES</span>
+			</div>
+			<div class="content_main_content">
+				<div class="content_container">
+					{% for post in posts %}
+					<a href="{% url 'post_detail' post.directory.choice post.directory post.slug %}">
+						<div class="index_post_item">
+							<div class="index_post_thumbnail_container">
+								<img src="{{ post.directory.thumbnail.url }}" class="index_post_thumbnail" alt="">
+							</div>
+							<div class="index_post_info_container">
+								<div class="index_post_directory_title">{{ post.directory.title }}</div>
+								<div class="index_post_title">{{ post.title }}</div>
+								<div class="index_post_description hide-under">{{ post.description|safe }}</div>
+							</div>
+						</div>
+					</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="side_bar">
+		{% include 'includes/sidebar.html' %}
+		</div>
+	</section>
+</article>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}대문 | {% endblock %}Help Bear Park의 세상</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+  </head>
+  <body>
+    <header>
+      <div class="top_container hide-under">
+        <div class="top">
+          <div class="top_sentence">
+            죽음 앞에 그 어떠한 것도 무가치하다. 자신의 신념대로 행동하라.
+          </div>
+          <div class="w_insta_container">
+            <a href="https://www.instagram.com/help_bear_park/" target="_blank">
+              <img src="{% static 'img/white_instagram.png' %}" class="w_insta_img" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="logo_container">
+        <div class="logo">
+          <a href="{% url 'home' %}">
+            <div class="logo_img">help bear park</div>
+          </a>
+          <div class="hide-upper hamburger_container" onclick="myFunction()">
+            <img src="{% static 'img/hamburger.png' %}" alt="" class="hamburger_icon">
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="nav_a_container" id="navContainer">
+          <a href="/post/development/" id="nav_development">DEVELOMPENT</a>
+          <a href="/post/workout/" id="nav_workout">WORKOUT</a>
+          <a href="/post/cooking/" id="nav_cooking">COOKING</a>
+          <a href="{% url 'contact' %}" id="nav_contact">CONTACT</a>
+        </div>
+      </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <footer>
+      <div class="footer">
+        <div class="footer_section">
+          <div class="footer_img_container">
+            <img src="{% static 'img/footer-helpbearpark.png' %}" alt="" class="footer_img">
+          </div>
+          <div class="footer_middle_container">
+            <span class="footer_section_title">2019 PLAN & GOAL</span>
+            <div>
+              <ul>
+                <li>금전적 독립</li>
+                <li>풀업 30개 돌파</li>
+                <li>아이디어 구체화</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer_last_container">
+            <span class="footer_section_title">마음가짐</span>
+            <div>
+              <ul>
+                <li>할거면 확실히</li>
+                <li>전진 밖에</li>
+                <li>직관을 따라가는 용기</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">Copyright 2019. helpbearpark. All rights reserved.</div>
+      </div>
+    </footer>
+    <script src="{% static 'js/vue.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="{% static 'js/djangovue.js' %}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script>
+      function myFunction() {
+        var x = document.getElementById("navContainer");
+        if (x.className === "nav_a_container") {
+          x.className += " responsive";
+        } else {
+          x.className = "nav_a_container";
+        }
+      }
+    </script>
+    {% block javascript %}{% endblock %}
+  </body>
+</html>

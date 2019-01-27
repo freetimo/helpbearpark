@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}{{choice}} | {% endblock %}
+{% block content %}
+<article>
+	<section class="middle_index">
+		<div class="content_section">
+			<div class="content_main_title eng_title">
+				<span>{{choice|upper}}</span>
+			</div>
+			<div class="directory_main_content">
+				<div class="directory_item_container">
+					{% for directory in directories %}
+						<a href="{% url 'post_list' directory.choice directory.slug %}" class="directory_item">
+							<div>
+								<div class="directory_item_img_container"><img src="{{ directory.thumbnail.url }}" alt="" class="directory_item_img"></div>
+								<div class="directory_title">{{ directory.title }}</div>
+							</div>
+						</a>
+					{% endfor %}
+				</div>				
+			</div>
+		</div>
+		<div class="side_bar hide-under">
+		{% include 'includes/sidebar.html' %}
+		</div>
+	</section>
+</article>
+{% endblock %}
+{% block javascript %}
+<script>
+	document.getElementById('nav_'+'{{choice}}').style.color = '#FFCC0D';
+</script>
+{% endblock %}

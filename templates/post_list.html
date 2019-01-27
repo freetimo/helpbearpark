@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}{{slug}} | {% endblock %}
+{% block content %}
+<article>
+	<section class="middle_index">
+		<div class="content_section">
+			<div class="content_main_title kor_title">
+				<span>{{slug|upper}}</span>
+			</div>
+			<div class="postlist_main_content">
+				<div class="postlist_container">
+				{% for post in post_list %}
+					<a href="{% url 'post_detail' choice post.directory post.slug %}">
+						<div class="postlist_title">{{ post.title }}</div>
+					</a>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="side_bar hide-under">
+		{% include 'includes/sidebar.html' %}
+		</div>
+	</section>
+</article>
+{% endblock %}
+{% block javascript %}
+<script>
+	document.getElementById('nav_'+'{{choice}}').style.color = '#FFCC0D';
+</script>
+{% endblock %}

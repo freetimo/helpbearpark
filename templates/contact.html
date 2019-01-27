@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}contact | {% endblock %}
+{% block content %}
+<article>
+	<section class="middle_index">
+		<div class="content_section" id="contactApp">
+			<template>
+			<div class="content_main_title eng_title">
+				<span>CONTACT</span>
+			</div>
+			{% verbatim %}
+			<div class="contact_main_content">
+		    <form v-on:submit.prevent="addContact()" class="contact_form">
+		    	<div>
+				    <input type="text" placeholder="제목을 입력하세요." autocomplete="off" v-model="newContact.title" class="contact_title_input">
+				    <input type="text" placeholder="이메일을 입력하세요." autocomplete="off" v-model="newContact.email" class="contact_email_input">
+		    	</div>
+			    <textarea placeholder="내용을 입력하세요." cols="40" rows="10" autocomplete="off" v-model="newContact.description" class="contact_description_input"></textarea>
+			    <div v-html="alert" class="error_message"></div>
+			    <div v-html="success" class="error_message"></div>
+			    <button type="submit" class="contact_send_btn">보내기</button>
+		    </form>
+			</div>
+			{% endverbatim %}
+		</template>
+		</div>
+		<div class="side_bar hide-under">
+		{% include 'includes/sidebar.html' %}
+		</div>
+	</section>
+</article>
+{% endblock %}
+{% block javascript %}
+<script>
+	document.getElementById('nav_contact').style.color = '#FFCC0D';
+</script>
+{% endblock %}

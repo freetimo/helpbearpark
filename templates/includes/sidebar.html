@@ -1,0 +1,69 @@
+{% load static %}
+<div class="profile_section">
+	<div class="side_main_title">
+		<span>ABOUT ME</span>
+	</div>
+	<div class="profile_img_container">
+		<img src="{% static 'img/profile.jpg' %}" class="profile_img" alt="">
+	</div>
+	<div class="profile_decription">
+		안녕하세요. 개발과 운동 그리고 요리에 관심이 많은 박찬웅입니다. html • css • javascript • vue.js • python • django를 다루어봤습니다. 저의 블로그에 오신 것을 환영합니다.
+	</div>
+	<div class="profile_decription">
+		<div class="profile_decription_title">개발한 사이트</div>
+		<a href="https://www.baumtory.com/" target="_blank">
+			<span>baumtory.com</span>
+		</a>
+		<a href="https://www.macohose.com/" target="_blank">
+			<span>macohose.com</span>
+		</a>
+		<span>지금 이 블로그 ㅎ</span>
+		<div class="profile_decription_title">Social Media</div>
+		<a href="https://www.instagram.com/help_bear_park/" target="_blank">
+			<span>Instagram</span>
+		</a>
+	</div>
+	<div class="profile_sign_container">
+		<img src="{% static '/img/helpbearpark.png' %}" class="profile_sign" alt="">
+	</div>
+</div>
+<div class="tasklist_section" id="tasklist">
+	<template>
+	<div class="side_main_title">
+		<span>TO DO LIST</span>
+	</div>
+	{% if not request.user.is_authenticated %}
+	<div class="side_info">주인장만 쓸 수 있어요.</div>
+	{% endif %}
+	{% verbatim %}
+	<div class="side_main_content">
+    <form v-on:submit.prevent="addTask()" class="task_form">
+	    <input type="text" placeholder="오늘의 할 일" autocomplete="off" v-model="newTask.title" class="task_input">
+	    <button type="submit" class="task_add_btn">추가</button>
+    </form>
+		<ul>
+			<li class="task" v-for='task in tasks'>
+				<div class="li_task">
+					<span class="task_title">[[ task.title ]]</span>
+					<div type="submit" v-on:click='deleteTask(task.id)' class="task_btn">완료</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	{% endverbatim %}
+	</template>
+</div>
+<div class="contactlist_section" id="contactListApp">
+	<div class="side_main_title">
+		<span>CONTACT</span>
+	</div>
+	{% verbatim %}
+		<ul>
+			<li class="task" v-for='contact in contacts.slice(0, 10)'>
+				<div class="li_task">
+					<span class="task_title">[[ contact.title ]]</span>
+				</div>
+			</li>
+		</ul>
+	{% endverbatim %}
+</div>
