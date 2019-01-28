@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-{% block title %}{{post_slug}} | {% endblock %}
+{% block title %}{{post_detail.title}} | {% endblock %}
+{% block og_title %}{{post_detail.title}} | {% endblock %}
 {% block content %}
 <article>
 	<section class="middle_index">

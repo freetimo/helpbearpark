@@ -5,6 +5,10 @@
     <title>{% block title %}대문 | {% endblock %}Help Bear Park의 세상</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="og:title" content="{% block og_title %}대문 | {% endblock %}Help Bear Park의 세상" />
+    <meta property="og:image" content="{% block og_img %}{% static 'img/profile.jpg' %}{% endblock %}" />
+    <meta property="og:description" content="{% block og_description %}개발, 운동, 요리에 빠진 이상주의자 | {% endblock %}Help Bear Park의 세상" />
+    <meta name="description" content="{% block description %}개발, 운동, 요리에 빠진 이상주의자 | {% endblock %}Help Bear Park의 세상">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Oswald" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
