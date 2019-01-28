@@ -242,7 +242,7 @@ article{
 .index_post_info_container{
 	flex: 2.5;
 	height: 18rem;
-	overflow-y: hidden;
+	overflow: hidden;
 }
 .index_post_directory_title{
 	font-size: 1.3rem;
