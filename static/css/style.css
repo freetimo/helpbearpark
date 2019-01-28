@@ -486,8 +486,8 @@ footer{
   text-align: center;
 	padding-top: 1rem;
 }
-.post_detail_description>p>img,
-.index_post_description >p>img{
+.post_detail_description img,
+.index_post_description img{
 	width: 100% !important;
 	height: 100% !important;
 }
