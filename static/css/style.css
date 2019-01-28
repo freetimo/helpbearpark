@@ -700,6 +700,11 @@ footer{
     grid-gap: 1rem;
     grid-row-gap: 3rem;
   }
+	.postlist_title{
+		font-size: 1.4rem;
+		padding: 0.7rem 1rem;
+		margin: 0.5rem;
+	}
   .post_detail_description{
   	font-size: 1.4rem;
   }
