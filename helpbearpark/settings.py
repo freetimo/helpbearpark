@@ -41,9 +41,9 @@ CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Autoformat',
         'toolbar_Special': [
-            ['CodeSnippet',]
+            ['CodeSnippet', 'Youtube']
         ],
-        'extraPlugins' : 'codesnippet'
+        'extraPlugins' : ','.join(['codesnippet', 'youtube']),
     },
 }
 

@@ -11,7 +11,7 @@
 			<div class="post_detail_main_content">
 				<div>
 					<div class="post_detail_title">{{ post_detail.title }}</div>
-					<div class="post_detail_description">{{ post_detail.description|safe }}</div>
+					<div class="post_detail_description" id="post_detail_description">{{ post_detail.description|safe }}</div>
 				</div>
 			</div>
 		</div>
@@ -24,5 +24,9 @@
 {% block javascript %}
 <script>
 	document.getElementById('nav_'+'{{choice}}').style.color = '#FFCC0D';
+	var iframes = document.getElementsByTagName('iframe');
+	for (var i = 0; i < iframes.length; i++) {
+		iframes[i].parentNode.className += "iframe_container"
+	}
 </script>
 {% endblock %}
