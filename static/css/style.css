@@ -27,6 +27,12 @@ textarea {
 ul{
   padding-inline-start: 2rem;
 }
+hr{
+	border-color: rgba(0, 0, 0, 0.1);
+	background-color : rgba(0, 0, 0, 0.1);
+	color: rgba(0, 0, 0, 0.1);
+
+}
 .hljs {
 	background-color: #e2ded4 !important;
 }
