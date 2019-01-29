@@ -199,11 +199,9 @@ article{
 	flex: 2.3;
 	margin-right: 1.5rem;
 }
-
-
-
 .side_bar,
-.profile_img_container{
+.profile_img_container,
+.ad_img_container{
 	flex: 1;
 }
 .content_main_title,
@@ -276,7 +274,8 @@ article{
 	background:#fff; 
 	padding:0 10px; 
 }
-.profile_img{
+.profile_img,
+.ad_img{
 	width: 100%;
 	height: auto;
 	margin-top: 4rem;
@@ -301,19 +300,20 @@ article{
 	border-radius: 2px;
 }
 .profile_sign_container{
-	float: right;
 	width: 15rem;
 	height: auto;
-	margin: -4rem 2rem 0 0;
+	float: right;
 }
 .profile_sign{
 	width: 100%;
 	height: 100%;
 	transform: rotate(-15deg)
 }
-
-.tasklist_section,
-.contactlist_section{
+.tasklist_section{
+	margin-top: 7rem;
+}
+.contactlist_section,
+.ad_section{
 	margin-top: 5rem;
 }
 .side_info{
@@ -667,7 +667,8 @@ footer{
   }
   .content_section,
   .side_bar,
-  .profile_img_container{
+  .profile_img_container,
+  .ad_img_container{
   	margin: 0;
   	flex: none;
   }
