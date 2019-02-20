@@ -442,6 +442,7 @@ article{
 .post_detail_description{
 	width: 100%;
 	font-size: 1.5rem;
+	word-wrap: break-word;
 }
 footer{
   position: absolute;
