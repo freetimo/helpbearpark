@@ -444,6 +444,9 @@ article{
 	font-size: 1.5rem;
 	word-wrap: break-word;
 }
+.post_detail_description code{
+	word-wrap: normal;
+}
 footer{
   position: absolute;
   left: 0;
