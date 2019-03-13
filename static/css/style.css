@@ -286,7 +286,11 @@ article{
 }
 .profile_decription{
 	font-size: 1.4rem;
-	margin: 1rem 0;
+	margin: 2rem 0 -1.5rem 0;
+}
+.profile_decription_child{
+	font-weight: bold;
+	text-decoration: underline;
 }
 .profile_decription>a>span,
 .profile_decription>span,
